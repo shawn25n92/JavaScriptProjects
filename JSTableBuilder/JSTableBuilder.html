@@ -15,8 +15,10 @@
                 alert(table_column.UDTableColumnCollection[i].TDid);
             }
             var new_table = new UDTable("hello", "world", "how", "border:1px solid black");
-            new_table.AddUDTableHead(new UDTableHead("", "", "", ""));
+            new_table.AddUDTableHead((UDTableHead("", "", "", "").AddUDTableRow("", "", "", "")));
             new_table.Render();
+
+
         </script>
     </body>
 </html>

@@ -29,9 +29,19 @@
         if (this.Tstyle != null) {
             table_main.setAttribute("style", this.Tstyle);
         }
-        if (this.UDTableHeadCollection.length >= 1) {
-            var table_head = document.createElement("thead");
-            table_main.appendChild(table_head);
+        if (this.UDTableHeadCollection.length > 0) {
+            for (var i = 0; i < this.UDTableHeadCollection.length; i++) {
+                var table_head = document.createElement("thead");
+                alert(this.UDTableHeadCollection[i]);
+                /*if (this.UDTableHeadCollection[i].UDTableRowCollection.length > 0) {
+                    
+                    for (var j = 0; j < this.UDTableHeadCollection[i].UDTableRowCollection.length; j++) {
+                        var table_head_row = document.createElement("tr");
+                        table_head.appendChild(table_head_row);
+                    }
+                }*/
+                table_main.appendChild(table_head);
+            }
         }
 
         if (display_location_selector != null && selector_type != null) {
@@ -50,6 +60,7 @@
             document.body.appendChild(table_main);
         }
     }
+    return this;
 }
 function UDTableHead(THid, THname, THclass, THstyle) {
     this.THid = THid;
@@ -62,6 +73,7 @@ function UDTableHead(THid, THname, THclass, THstyle) {
             this.UDTableRowCollection.push(arguments[i]);
         }
     }
+    return this;
 }
 function UDTableBody(TBid, TBname, TBclass, TBstyle) {
     this.TBid = TBid;
@@ -74,6 +86,7 @@ function UDTableBody(TBid, TBname, TBclass, TBstyle) {
             this.UDTableRowCollection.push(arguments[i]);
         }
     }
+    return this;
 }
 function UDTableRow(TRid, TRname, TRclass, TRstyle) {
     this.TRid = TRid;
@@ -86,6 +99,7 @@ function UDTableRow(TRid, TRname, TRclass, TRstyle) {
             this.UDTableColumnCollection.push(arguments[i]);
         }
     }
+    return this;
 }
 function UDTableColumn(TDid, TDname, TDclass, TDstyle, TDcontent) {
     this.TDid = TDid;
@@ -93,4 +107,5 @@ function UDTableColumn(TDid, TDname, TDclass, TDstyle, TDcontent) {
     this.TDclass = TDclass;
     this.TDstyle = TDstyle;
     this.TDcontent = TDcontent;
+    return this;
 }
