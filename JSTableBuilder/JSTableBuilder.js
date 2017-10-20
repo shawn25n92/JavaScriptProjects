@@ -32,7 +32,7 @@
         if (this.UDTableHeadCollection.length > 0) {
             for (var i = 0; i < this.UDTableHeadCollection.length; i++) {
                 var table_head = document.createElement("thead");
-                alert(this.UDTableHeadCollection[i]);
+                
                 /*if (this.UDTableHeadCollection[i].UDTableRowCollection.length > 0) {
                     
                     for (var j = 0; j < this.UDTableHeadCollection[i].UDTableRowCollection.length; j++) {
