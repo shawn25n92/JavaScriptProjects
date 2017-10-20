@@ -3,8 +3,20 @@
     <head>
         <meta charset="utf-8" />
         <title>JSTableBuilder Examples</title>
+        <script src="JSTableBuilder.js"></script>
     </head>
     <body>
         helloworld
+        <table></table>
+        <script>
+            var table_column = new UDTableRow("hello", "world", "I'm", "Shawn");
+            table_column.AddUDTableColumn(new UDTableColumn("hellod", "", "", "", ""), new UDTableColumn("world", "", "", "", ""));
+            for (var i = 0; i < table_column.UDTableColumnCollection.length; i++) {
+                alert(table_column.UDTableColumnCollection[i].TDid);
+            }
+            var new_table = new UDTable("hello", "world", "how", "border:1px solid black");
+            new_table.AddUDTableHead(new UDTableHead("", "", "", ""));
+            new_table.Render();
+        </script>
     </body>
 </html>
