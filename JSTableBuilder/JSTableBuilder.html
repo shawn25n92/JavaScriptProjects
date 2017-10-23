@@ -9,17 +9,35 @@
         helloworld
         <table></table>
         <script>
-            var table_column = new UDTableRow("hello", "world", "I'm", "Shawn");
-            table_column.AddUDTableColumn(new UDTableColumn("hellod", "", "", "", ""), new UDTableColumn("world", "", "", "", ""));
-            for (var i = 0; i < table_column.UDTableColumnCollection.length; i++) {
-                alert(table_column.UDTableColumnCollection[i].TDid);
-            }
             var new_table = new UDTable("hello", "world", "how", "border:1px solid black");
-            new_table.AddUDTableHead(UDTableHead("tablehead", "", "", ""));
-            alert(new_table.UDTableHeadCollection[0].THid)
+            new_table.AddUDTableHead(
+                UDTableHead("tablehead", "", "", "").AddUDTableRow(
+                    new UDTableRow("", "", "", "").AddUDTableColumn(
+                        new UDTableColumn("", "", "ehehehehehehhe", "", "Hi"),
+                        new UDTableColumn("", "", "", "", "My"),
+                        new UDTableColumn("", "", "", "", "name"),
+                        new UDTableColumn("", "", "", "", "is"),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", "ddddd")
+                    ),
+                    new UDTableRow("", "", "", "").AddUDTableColumn(
+                        new UDTableColumn("", "", "", "", "yello"),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", ""),
+                        new UDTableColumn("", "", "", "", "werld")
+                    )
+                )
+            );
             new_table.Render();
-
-
         </script>
     </body>
 </html>

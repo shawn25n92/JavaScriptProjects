@@ -33,13 +33,30 @@
             for (var i = 0; i < this.UDTableHeadCollection.length; i++) {
                 var table_head = document.createElement("thead");
                 
-                /*if (this.UDTableHeadCollection[i].UDTableRowCollection.length > 0) {
-                    
+                if (this.UDTableHeadCollection[i].UDTableRowCollection.length > 0) {
                     for (var j = 0; j < this.UDTableHeadCollection[i].UDTableRowCollection.length; j++) {
                         var table_head_row = document.createElement("tr");
+                        for (var k = 0; k < this.UDTableHeadCollection[i].UDTableRowCollection[j].UDTableColumnCollection.length; k++) {
+                            var table_head_row_column = document.createElement("td");
+                            var current_column = this.UDTableHeadCollection[i].UDTableRowCollection[j].UDTableColumnCollection[k];
+                            table_head_row_column.innerHTML = current_column.TDcontent;
+                            if (current_column.TDclass != null) {
+                                table_head_row_column.setAttribute("class", current_column.TDclass);
+                            }
+                            if (current_column.TDid != null) {
+                                table_head_row_column.setAttribute("id", current_column.TDid);
+                            }
+                            if (current_column.TDname != null) {
+                                table_head_row_column.setAttribute("name", current_column.TDname);
+                            }
+                            if (current_column.TDstyle != null) {
+                                table_head_row_column.setAttribute("style", current_column.TDstyle);
+                            }
+                            table_head_row.appendChild(table_head_row_column);
+                        }
                         table_head.appendChild(table_head_row);
                     }
-                }*/
+                }
                 table_main.appendChild(table_head);
             }
         }
@@ -72,6 +89,7 @@ function UDTableHead(THid, THname, THclass, THstyle) {
         for (var i = 0; i < arguments.length; i++) {
             this.UDTableRowCollection.push(arguments[i]);
         }
+        return this;
     }
     return this;
 }
@@ -85,6 +103,7 @@ function UDTableBody(TBid, TBname, TBclass, TBstyle) {
         for (var i = 0; i < arguments.length; i++) {
             this.UDTableRowCollection.push(arguments[i]);
         }
+        return this;
     }
     return this;
 }
@@ -98,6 +117,7 @@ function UDTableRow(TRid, TRname, TRclass, TRstyle) {
         for (var i = 0; i < arguments.length; i++) {
             this.UDTableColumnCollection.push(arguments[i]);
         }
+        return this;
     }
     return this;
 }
